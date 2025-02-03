@@ -5,6 +5,10 @@
   "author": "Johanna Hüll",
   "license": "ISC",
   "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "bilder": "parcel build"
+  },
   "devDependencies": {
     "parcel": "^2.13.3"
   }
