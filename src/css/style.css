@@ -5,13 +5,71 @@
 }
 
 body {
-    background-color: rgb(166, 246, 246);
+    background-color: rgb(198, 249, 249);
     font-family: 'Courier New', Courier, monospace;
     color: black;
 }
 
-.header {
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     background-color: teal;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+}
+
+
+
+/* Gemensam stil för menyknappar */
+.menu-btn {
+    display: none; /* Döljs som standard */
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+/* Navigeringsmenyn */
+#nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    list-style: none;
+}
+
+/* Om du har en extra nivå med <ul> inuti nav */
+#nav-menu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stil för menyobjekt */
+#nav-menu ul li {
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+/* Hover-effekt för menyobjekt */
+#nav-menu ul li:hover {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+/* Länkar i menyobjekten */
+#nav-menu ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 
@@ -142,3 +200,45 @@ body {
   .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+
+
+ /* Responsiv design för skärmar upp till 768px */
+@media (max-width: 768px) { 
+    .menu-btn {
+        display: inline-block; /* Visa menyknappen på mindre skärmar */
+    }
+
+    /* Dölj den vanliga menyn som standard på små skärmar */
+    #nav-menu {
+        display: none; 
+        flex-direction: column; /* Stapla menyobjekt vertikalt */
+        background-color: teal;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 66.67vw;
+        height: 100vh;
+        z-index: 1000;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+    }
+
+    /* Anpassa den inre listan så att den ligger vertikalt */
+    #nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Om en klass används för att visa menyn */
+    #nav-menu.show {
+        display: flex;
+    }
+}
+
+/* Responsiv design för skärmar upp till 480px */
+@media (max-width: 480px) {
+    /* Om du vill centrera innehållet i den inre listan */
+    header nav ul {
+        justify-content: center;
+    }
+}
