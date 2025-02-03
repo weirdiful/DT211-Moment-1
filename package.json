@@ -2,8 +2,9 @@
   "name": "dt211-moment-1",
   "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Johanna Hüll",
   "license": "ISC",
+  "source": "src/index.html",
   "devDependencies": {
     "parcel": "^2.13.3"
   }
