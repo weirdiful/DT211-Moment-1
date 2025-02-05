@@ -100,7 +100,34 @@ body {
     background-color: aqua;
 }
 
+/*Startsida*/
 
+.start-heading {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.start-info {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.start-info h2 {
+    margin-bottom: 10px;
+}
+
+.start-info ul {
+    list-style-type: disc; 
+    margin-left: 20px; 
+    padding-left: 20px;
+}
+
+.start-info li {
+    margin-bottom: 8px; 
+}
+
+
+/*Modal*/
 .myImg {
     border-radius: 5px;
     cursor: pointer;
