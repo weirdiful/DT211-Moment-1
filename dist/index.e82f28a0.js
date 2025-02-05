@@ -597,22 +597,28 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"dV6cC":[function(require,module,exports,__globalThis) {
 "use strict";
-// Get the modal
+// Hämta modalen
 var modal = document.getElementById("myModal");
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-img.onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-};
-// Get the <span> element that closes the modal
+// Hämta alla bilder med klassen "myImg"
+var images = document.querySelectorAll(".myImg");
+// Lägg till klick-händelse på varje bild
+images.forEach(function(img) {
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    };
+});
+// Stäng modalen vid klick på stängningsknappen
 var span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
+};
+// Stäng modalen om användaren klickar utanför bilden
+modal.onclick = function(event) {
+    if (event.target === modal) modal.style.display = "none";
 };
 
 },{}]},["aDUUU","dV6cC"], "dV6cC", "parcelRequire94c2")
