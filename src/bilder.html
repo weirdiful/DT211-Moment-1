@@ -49,39 +49,58 @@
                 
                 </script>
 
-    
-<img id="myImg" src="img/img1.jpeg" alt="city" style="width:100%;max-width:300px">
 
-<div id="myModal" class="modal">
+<img class="myImg" src="img/img1.jpeg" alt="Omotesando street in Harajuku" style="width:100%;max-width:300px">
 
-  <span class="close">&times;</span>
+<img class="myImg" src="img/img2.jpeg" alt="Osaka Dotonburi" style="width:100%;max-width:300px">
 
-  <img class="modal-content" id="img01">
+<img class="myImg" src="img/img3.jpeg" alt="Osaka by night" style="width:100%;max-width:300px">
 
-  <div id="caption"></div>
-</div>
+<img class="myImg" src="img/img4.jpeg" alt="Shibuya crossing night" style="width:100%;max-width:300px">
+
+<img class="myImg" src="img/img5.jpeg" alt="Nishiki market Kyoto" style="width:100%;max-width:300px">
+
+<div class="myModal" class="modal">
+
+ 
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     
-<script>// Get the modal
-    var modal = document.getElementById("myModal");
-    
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById("myImg");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    img.onclick = function(){
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
-    }
-    
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
+    <script>
+        // Hämta modalen
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        // Hämta alla bilder med klassen "myImg"
+        var images = document.querySelectorAll(".myImg");
+
+        // Lägg till klick-händelse på varje bild
+        images.forEach(function(img) {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            };
+        });
+
+        // Stäng modalen vid klick på stängningsknappen
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Stäng modalen om användaren klickar utanför bilden
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
     </script>
+  
 
      
 </body>
