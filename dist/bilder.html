@@ -36,25 +36,37 @@
             
         </div> 
 
-            <script>function openNav() {
-    document.getElementById("menu").style.width = "250px";
-}
-function closeNav() {
-    document.getElementById("menu").style.width = "0";
-}
-
-</script>
 
 
-<img class="myImg" src="/img1.dbe22311.jpeg" alt="Omotesando street in Harajuku" style="width: 100%; max-width: 300px">
+        <picture class="myImg">
+            <source srcset="/img1.2c1754b9.webp" type="image/webp">
+            <source srcset="/img1.b0c4892d.avif" type="image/avif">
+            <img src="/img1.dbe22311.jpeg" alt="Omotesando street in Harajuku" style="width: 100%; max-width: 300px">
+        </picture>
 
-<img class="myImg" src="/img2.0e05eff9.jpeg" alt="Osaka Dotonburi" style="width: 100%; max-width: 300px">
+            <picture>
+                <source srcset="/img2.72b0bb88.webp" type="image/webp">
+                <source srcset="/img2.bb5236f3.avif" type="image/avif">
+                <img class="myImg" src="/img2.0e05eff9.jpeg" alt="Osaka Dotonburi" style="width: 100%; max-width: 300px">
+            </picture>
 
-<img class="myImg" src="/img3.af728854.jpeg" alt="Osaka by night" style="width: 100%; max-width: 300px">
+            <picture>
+                <source srcset="/img3.2e7a162e.webp" type="image/webp">
+                <source srcset="/img3.87dd38da.avif" type="image/avif">
+                <img class="myImg" src="/img3.af728854.jpeg" alt="Osaka by night" style="width: 100%; max-width: 300px">
+            </picture>
 
-<img class="myImg" src="/img4.6dcd423f.jpeg" alt="Shibuya crossing night" style="width: 100%; max-width: 300px">
+            <picture>
+                <source srcset="/img4.a4f865bf.webp" type="image/webp">
+                <source srcset="/img4.f0a9679c.avif" type="image/avif">
+                <img class="myImg" src="/img4.6dcd423f.jpeg" alt="Shibuya crossing night" style="width: 100%; max-width: 300px">
+            </picture>
 
-<img class="myImg" src="/img5.276944f4.jpeg" alt="Nishiki market Kyoto" style="width: 100%; max-width: 300px">
+            <picture>
+                <source srcset="/img5.346baae5.webp" type="image/webp">
+                <source srcset="/img5.3d6028ce.avif" type="image/avif">
+                <img class="myImg" src="/img5.276944f4.jpeg" alt="Nishiki market Kyoto" style="width: 100%; max-width: 300px">
+            </picture>
 
 <div class="myModal">
 
@@ -65,31 +77,7 @@ function closeNav() {
         <div id="caption"></div>
     </div>
     
-    <script>// Hämta modalen
-var modal = document.getElementById("myModal");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-// Hämta alla bilder med klassen "myImg"
-var images = document.querySelectorAll(".myImg");
-// Lägg till klick-händelse på varje bild
-images.forEach(function(img) {
-    img.onclick = function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    };
-});
-// Stäng modalen vid klick på stängningsknappen
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-    modal.style.display = "none";
-};
-// Stäng modalen om användaren klickar utanför bilden
-modal.onclick = function(event) {
-    if (event.target === modal) modal.style.display = "none";
-};
-
-</script>
+  
   
 
      

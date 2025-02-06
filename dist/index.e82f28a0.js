@@ -598,21 +598,26 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"dV6cC":[function(require,module,exports,__globalThis) {
 "use strict";
 // Hämta modalen
-var modal = document.getElementById("myModal");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
+let modal = document.getElementById("myModal");
+let modalImg = document.getElementById("img01");
+let captionText = document.getElementById("caption");
 // Hämta alla bilder med klassen "myImg"
-var images = document.querySelectorAll(".myImg");
+let images = document.querySelectorAll(".myImg, .myImg img");
 // Lägg till klick-händelse på varje bild
 images.forEach(function(img) {
     img.onclick = function() {
         modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+        if (this.tagName.toLowerCase() == "picture") {
+            modalImg.src = this.querySelector("img").src;
+            captionText.innerHTML = this.querySelector("img").alt;
+        } else {
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
     };
 });
 // Stäng modalen vid klick på stängningsknappen
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
     modal.style.display = "none";
 };
@@ -620,6 +625,12 @@ span.onclick = function() {
 modal.onclick = function(event) {
     if (event.target === modal) modal.style.display = "none";
 };
+function openNav() {
+    document.getElementById("menu").style.width = "250px";
+}
+function closeNav() {
+    document.getElementById("menu").style.width = "0";
+}
 
 },{}]},["aDUUU","dV6cC"], "dV6cC", "parcelRequire94c2")
 

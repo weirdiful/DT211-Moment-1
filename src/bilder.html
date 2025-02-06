@@ -36,29 +36,37 @@
             
         </div> 
 
-            <script>
-                function openNav() {
-                  document.getElementById("menu").style.width = "250px";
-
-                }
-                
-                function closeNav() {
-                  document.getElementById("menu").style.width = "0";
-                }
-
-                
-                </script>
 
 
-<img class="myImg" src="img/img1.jpeg" alt="Omotesando street in Harajuku" style="width:100%;max-width:300px">
+        <picture class="myImg">
+            <source srcset="img/img1.jpeg?as=webp&width=400" type="image/webp">
+            <source srcset="img/img1.jpeg?as=avif&width=400" type="image/avif">
+            <img src="img/img1.jpeg" alt="Omotesando street in Harajuku" style="width:100%;max-width:300px">
+        </picture>
 
-<img class="myImg" src="img/img2.jpeg" alt="Osaka Dotonburi" style="width:100%;max-width:300px">
+            <picture>
+                <source srcset="img/img2.jpeg?as=webp&width=400" type="image/webp">
+                <source srcset="img/img2.jpeg?as=avif&width=400" type="image/avif">
+                <img class="myImg" src="img/img2.jpeg" alt="Osaka Dotonburi" style="width:100%;max-width:300px">
+            </picture>
 
-<img class="myImg" src="img/img3.jpeg" alt="Osaka by night" style="width:100%;max-width:300px">
+            <picture>
+                <source srcset="img/img3.jpeg?as=webp&width=400" type="image/webp">
+                <source srcset="img/img3.jpeg?as=avif&width=400" type="image/avif">
+                <img class="myImg" src="img/img3.jpeg" alt="Osaka by night" style="width:100%;max-width:300px">
+            </picture>
 
-<img class="myImg" src="img/img4.jpeg" alt="Shibuya crossing night" style="width:100%;max-width:300px">
+            <picture>
+                <source srcset="img/img4.jpeg?as=webp&width=400" type="image/webp">
+                <source srcset="img/img4.jpeg?as=avif&width=400" type="image/avif">
+                <img class="myImg" src="img/img4.jpeg" alt="Shibuya crossing night" style="width:100%;max-width:300px">
+            </picture>
 
-<img class="myImg" src="img/img5.jpeg" alt="Nishiki market Kyoto" style="width:100%;max-width:300px">
+            <picture>
+                <source srcset="img/img5.jpeg?as=webp&width=400" type="image/webp">
+                <source srcset="img/img5.jpeg?as=avif&width=400" type="image/avif">
+                <img class="myImg" src="img/img5.jpeg" alt="Nishiki market Kyoto" style="width:100%;max-width:300px">
+            </picture>
 
 <div class="myModal" class="modal">
 
@@ -69,37 +77,7 @@
         <div id="caption"></div>
     </div>
     
-    <script>
-        // Hämta modalen
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-
-        // Hämta alla bilder med klassen "myImg"
-        var images = document.querySelectorAll(".myImg");
-
-        // Lägg till klick-händelse på varje bild
-        images.forEach(function(img) {
-            img.onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            };
-        });
-
-        // Stäng modalen vid klick på stängningsknappen
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-            modal.style.display = "none";
-        };
-
-        // Stäng modalen om användaren klickar utanför bilden
-        modal.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-    </script>
+  
   
 
      
